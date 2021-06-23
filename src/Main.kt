@@ -1,39 +1,30 @@
 fun main() {
     println("Bem vindo ao Bytebank")
     
-    val funcionario = Funcionario(
-        "Hugo",
-        "11111111",
-        1000.0
-    )
+    val contaCorrente = ContaCorrente(titular = "hugo", numero = 1000)
+    val contaPoupanca = ContaPoupanca(titular = "ze", numero = 1001)
     
-    val gerente = Gerente(
-        "Fred",
-        "11111111",
-        1000.0,
-        5555
-    )
+    contaCorrente.deposita(1000.0)
+    contaPoupanca.deposita(1000.0)
     
-    val diretor = Diretor(
-        "Cris",
-        "11111111",
-        1000.0,
-        5555,
-        200.0
-    )
+    println("saldo conta corrente: ${contaCorrente.saldo}")
+    println("saldo conta poupança: ${contaPoupanca.saldo}")
     
-    println("Nome: ${funcionario.nome}, " +
-            "cpf ${funcionario.cpf}, " +
-            "salario ${funcionario.salario}, " +
-            "bonificação ${funcionario.bonificacao()}" )
+    contaCorrente.saca(100.0)
+    contaPoupanca.saca(100.0)
     
-    println("Nome: ${gerente.nome}, " +
-            "cpf ${gerente.cpf}, " +
-            "salario ${gerente.salario}, " +
-            "bonificação ${gerente.bonificacao()}" )
+    println("saldo pós saque conta corrente: ${contaCorrente.saldo}")
+    println("saldo pós saque conta poupança: ${contaPoupanca.saldo}")
     
-    println("Nome: ${diretor.nome}, " +
-            "cpf ${diretor.cpf}, " +
-            "salario ${diretor.salario}, " +
-            "bonificação ${diretor.bonificacao()}" )
+    contaCorrente.transfere(200.0,contaPoupanca)
+    
+    println("saldo pós transferencia conta corrente: ${contaCorrente.saldo}")
+    println("saldo pós transferencia conta poupança: ${contaPoupanca.saldo}")
+    
+    contaPoupanca.transfere(500.0,contaCorrente)
+    
+    println("saldo pós transferencia conta corrente: ${contaCorrente.saldo}")
+    println("saldo pós transferencia conta poupança: ${contaPoupanca.saldo}")
+    
 }
+
