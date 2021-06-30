@@ -9,7 +9,7 @@ class Diretor  (
     cpf,
     salario
 ){
-    override fun bonificacao():Double = super.bonificacao() + salario + plr
+    override fun bonificacao():Double = salario + plr
     
     fun autentica(senha:Int): Boolean = this.senha == senha
 }

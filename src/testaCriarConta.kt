@@ -1,6 +1,6 @@
 fun testaCriarConta() {
-    var contaHugo = Conta("Hugo",1,)
-    var contaAlex = Conta("Alex",2,)
+    var contaHugo = ContaCorrente("Hugo",1,)
+    var contaAlex = ContaPoupanca("Alex",2,)
     
     contaAlex.deposita(50.0)
     contaHugo.deposita(100.0)
