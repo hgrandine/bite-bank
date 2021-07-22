@@ -61,4 +61,9 @@ fun testaFuncionario() {
     calculaBonificacao.regitra(analista)
     
     println("Total de bonificação ${calculaBonificacao.total}")
+   
+    var sistemaInterno = SistemaInterno()
+    sistemaInterno.entra(gerente, 5555)
+    sistemaInterno.entra(gerente, 1111)
+    
 }
