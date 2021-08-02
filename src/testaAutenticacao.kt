@@ -1,4 +1,4 @@
-class testaAutenticacao {
+fun testaAutenticacao() {
     val gerente = Gerente(
         nome = "Alex",
         cpf = "111.111.111-11",
@@ -19,8 +19,7 @@ class testaAutenticacao {
     )
     
     val sistema = SistemaInterno()
-    //sistema.entra(gerente, 2000)
-    //sistema.entra(diretora, 1000)
-//    sistema.entra(cliente, 1234)
-
+    sistema.entra(gerente, 1000)
+    sistema.entra(diretora, 2000)
+    sistema.entra(cliente, 1234)
 }
